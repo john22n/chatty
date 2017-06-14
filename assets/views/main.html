@@ -6,9 +6,10 @@
 <div class="jumbotron">
 
 	<form ng-submit="addMessage(newMessage)">
-		<input ng-model="newMessage" type="text" placeholder="Hello!">
-	</form>
+		<input ng-model="newMessage.message" type="text" placeholder="Hello!">
+		<input ng-model="newMessage.userName" type="text" placeholder="enter username">
+		<input ng-model="newMessage.picture" type="file" placeholder="upload pic">
 
-	<div ng-repeat="message in messages track by $index">{{ message }}</div>
+	<div ng-repeat="message in messages track by $index">{{ message.userName }} - {{ message.message }} : {{ message.time | date: 'shortTime' }}</div>
 
 </div>
